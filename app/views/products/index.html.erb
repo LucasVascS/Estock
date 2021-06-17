@@ -1,0 +1,8 @@
+<h1>Cadastro de Produtos - Products</h1>
+
+<%= simple_form_for (@product) do |f| %>
+  <%= f.input :name %>
+  <%= f.input :type %>
+  <%= f.association :provider %>
+  <%= f.button :submit %>
+<% end %>
