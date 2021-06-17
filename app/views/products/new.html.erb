@@ -1,0 +1,11 @@
+<h1>Cadastro de Produtos</h1>
+
+<%= simple_form_for (@product) do |f| %>
+  <div class="col-md-6">
+  <%= f.input :name %>
+  <%= f.input :type %>
+  <%= f.association :provider %>
+  </div><br>
+  <%=f.submit 'Salvar', class:"btn btn-primary"%>
+  <%=link_to "Cancelar", products_path, class:'btn btn-primary'%>
+<% end %>

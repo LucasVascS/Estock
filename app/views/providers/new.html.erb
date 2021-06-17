@@ -1,0 +1,17 @@
+<h1>Cadastro de  Fornecedores</h1>
+
+<%= simple_form_for (@provider) do |f| %>
+  <div class="col-md-6">
+  <%= f.input :type %>
+  <%= f.input :cpf %>
+  <%= f.input :cnpj %>
+  <%= f.input :cep %>
+  <%= f.input :publicplace %>
+  <%= f.input :complement %>
+  <%= f.input :district %>
+  <%= f.input :location %>
+  <%= f.input :phew %>
+  </div><br>
+  <%=f.submit 'Salvar', class:"btn btn-primary"%>
+  <%=link_to "Cancelar", providers_path, class:'btn btn-primary'%>
+<% end %>
