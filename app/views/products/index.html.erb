@@ -1,8 +1,6 @@
-<h1>Cadastro de Produtos - Products</h1>
+<h1> Produtos </h1>
 
-<%= simple_form_for (@product) do |f| %>
-  <%= f.input :name %>
-  <%= f.input :type %>
-  <%= f.association :provider %>
-  <%= f.button :submit %>
-<% end %>
+<div>
+  <%= link_to "Cadastrar Produtos", new_product_path, class:'btn btn-primary' %>
+</div>
+
