@@ -1,4 +1,5 @@
 class ProductsController < ApplicationController
+  before_action :authenticate_user!
 
   def index
     @product = Product.all
@@ -29,7 +30,7 @@ class ProductsController < ApplicationController
   def create
     product_params = params.require(:product)
     @product = Product.new(product_params)
-    if @product.save
+    if @product.update(product_params)
       render action: "index"
     else
       render :new
