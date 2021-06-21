@@ -21,6 +21,8 @@ gem 'bootstrap', '~> 5.0.1'
 gem 'jquery-rails'
 #simple-form
 gem 'simple_form'
+#devise
+gem 'devise'
 
 
 # Use CoffeeScript for .coffee assets and views

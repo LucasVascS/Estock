@@ -17,7 +17,7 @@ class ProvidersController < ApplicationController
     @provider = Provider.find(params: [:id])
     provider_params = params.require(:provider)
     if @provider.update(provider_params)
-      redirect_to action: "inde"
+      redirect_to action: "index"
     else
       render :edit
     end
