@@ -23,7 +23,10 @@ gem 'jquery-rails'
 gem 'simple_form'
 #devise
 gem 'devise'
-
+#httparty
+gem 'httparty'
+#Paloma
+gem 'paloma', '~> 6.1.0'
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
@@ -53,6 +56,7 @@ end
 group :development do
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
   gem 'web-console', '>= 3.3.0'
+  gem 'byebug'
   gem 'listen', '>= 3.0.5', '< 3.2'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'

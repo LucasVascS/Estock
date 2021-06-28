@@ -1,17 +1,23 @@
 <h1>Cadastro de  Fornecedores</h1>
 
-<%= simple_form_for (@provider) do |f| %>
+<%= simple_form_for (@provider), input_html: { class: 'providerform' } do |f| %>
   <div class="col-md-6">
-  <%= f.input :type %>
-  <%= f.input :cpf %>
-  <%= f.input :cnpj %>
+  <%= f.input :name, label: "Nome"%>
+  <%= f.input :personregistration, label: "Tipo", collection: ["Pessoa Física","Pessoa Jurídica"], input_html: { class: 'typeofpeople' } %>
+  <div class="cpfclass" >
+    <%= f.input :cpf%>
+  </div>
+  <div class="cnpjclass" >
+    <%= f.input :cnpj%>
+  </div>
+  
   <%= f.input :cep %>
-  <%= f.input :publicplace %>
-  <%= f.input :complement %>
-  <%= f.input :district %>
-  <%= f.input :location %>
-  <%= f.input :phew %>
+  <%= f.input :publicplace, label: "Logradouro"%>
+  <%= f.input :complement, label: "Complemento"%>
+  <%= f.input :district, label: "Bairro"%>
+  <%= f.input :location, label: "Localidade"%>
+  <%= f.input :phew, label: "Estado"%>
   </div><br>
   <%=f.submit 'Salvar', class:"btn btn-primary"%>
-  <%=link_to "Cancelar", providers_path, class:'btn btn-primary'%>
+  <%=link_to "Cancelar", products_path, class:'btn btn-primary'%>
 <% end %>

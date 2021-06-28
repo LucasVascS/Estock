@@ -15,8 +15,8 @@ class ProductsController < ApplicationController
 
   def update
     @product = Product.find(params: [:id])
-    product_params - params.require(:product)
-    if @product.save
+    product_params = params.require(:product)
+    if @product.update
       redirect_to action: "index"
     else
       render :edit
@@ -28,10 +28,11 @@ class ProductsController < ApplicationController
   end
 
   def create
-    product_params = params.require(:product)
+    product_params = params.require(:product).permit(:name, :productgenre, :provider_id)
     @product = Product.new(product_params)
-    if @product.update(product_params)
-      render action: "index"
+    
+    if @product.save
+      redirect_to action: "index"
     else
       render :new
     end  
