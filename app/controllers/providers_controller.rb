@@ -1,7 +1,9 @@
 class ProvidersController < ApplicationController
+  before_action :set_cep_service
 
   def index
     @provider = Provider.all
+    @cep = @cep_service.general
   end
 
   def show
@@ -28,7 +30,8 @@ class ProvidersController < ApplicationController
   end
 
   def create
-    provider_params = params.require(:provider)
+    provider_params = params.require(:provider).permit(:name, :personregistration, :cpf, :cnpj, :cep, :publicplace, :complement, :district,
+    :location, :phew)
     @provider = Provider.new(provider_params)
     
     if @provider.save
@@ -42,6 +45,12 @@ class ProvidersController < ApplicationController
   def destroy
     @provider = Provider.find(params: [:id])
     @provider.destroy
+  end
+
+  private
+
+  def set_cep_service
+    @cep_service = CepService.new
   end
   
 end

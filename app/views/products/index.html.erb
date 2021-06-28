@@ -1,9 +1,21 @@
 <h1> Produtos </h1>
+<p>Usuário logado: <%=current_user.email%></p>
 
-<div>
-  <%= link_to "Cadastrar Produtos", new_product_path, class:'btn btn-primary' %>
-</div><br>
-<div>
-  <%= link_to "Cadastrar Fornecedor", new_provider_path, class:'btn btn-primary' %>
-</div>
-
+<table class="table table-dark table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Nome</th>
+      <th scope="col">Tipo</th>
+      <th scope="col">Fornecedor</th>
+    </tr>
+  </thead>
+<%@product.each do |product|%>
+    <tbody>
+      <tr>
+        <td><%=product.name%></td>
+        <td><%=product.productgenre%></td>
+        <td><%=product.provider.name%></td>
+      </tr>
+    </tbody>
+  </table>
+<%end%>

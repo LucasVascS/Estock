@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 2021_06_21_172842) do
 
   create_table "products", force: :cascade do |t|
     t.string "name"
-    t.string "type"
+    t.string "productgenre"
     t.bigint "provider_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(version: 2021_06_21_172842) do
 
   create_table "providers", force: :cascade do |t|
     t.string "name"
-    t.string "type"
+    t.string "personregistration"
     t.string "cpf"
     t.string "cnpj"
     t.string "cep"

@@ -2,8 +2,8 @@
 
 <%= simple_form_for (@product) do |f| %>
   <div class="col-md-6">
-  <%= f.input :name %>
-  <%= f.input :type %>
+  <%= f.input :name, label: "Nome" %>
+  <%= f.input :productgenre, label: "Tipo de produto", collection:["Eletrônico", "Informática", "Alimentício", "Eletrodoméstico"] %>
   <%= f.association :provider %>
   </div><br>
   <%=f.submit 'Salvar', class:"btn btn-primary"%>
