@@ -3,20 +3,19 @@
 <%= simple_form_for (@provider), input_html: { class: 'providerform' } do |f| %>
   <div class="col-md-6">
   <%= f.input :name, label: "Nome"%>
-  <%= f.input :personregistration, label: "Tipo", collection: ["Pessoa Física","Pessoa Jurídica"], input_html: { class: 'typeofpeople' } %>
-  <div class="cpfclass" >
+  <%= f.input :personregistration, label: "Tipo", collection: [["Pessoa Física", "phisical_person"],["Pessoa Jurídica", "juridic_person"]], input_html: { class: 'typeofpeople' } %>
+  <div class="cpffield" >
     <%= f.input :cpf%>
   </div>
-  <div class="cnpjclass" >
+  <div class="cnpjfield" >
     <%= f.input :cnpj%>
   </div>
-  
-  <%= f.input :cep %>
-  <%= f.input :publicplace, label: "Logradouro"%>
-  <%= f.input :complement, label: "Complemento"%>
-  <%= f.input :district, label: "Bairro"%>
-  <%= f.input :location, label: "Localidade"%>
-  <%= f.input :phew, label: "Estado"%>
+  <%= f.input :cep, input_html: {class: 'getcep'} %>
+  <%= f.input :publicplace, label: "Logradouro", input_html: {class: 'resetfields'}%>
+  <%= f.input :complement, label: "Complemento", input_html: {class: 'resetfields'}%>
+  <%= f.input :district, label: "Bairro", input_html: {class: 'resetfields'}%>
+  <%= f.input :location, label: "Localidade", input_html: {class: 'resetfields'}%>
+  <%= f.input :phew, label: "Estado", input_html: {class: 'resetfields'}%>
   </div><br>
   <%=f.submit 'Salvar', class:"btn btn-primary"%>
   <%=link_to "Cancelar", products_path, class:'btn btn-primary'%>
