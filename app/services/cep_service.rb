@@ -6,7 +6,7 @@ class CepService
     @options = {}
   end
 
-  def general
-    self.class.get('https://viacep.com.br/ws/60860690/json/', @options)
+  def general(cep:)
+    self.class.get("https://viacep.com.br/ws/#{cep}/json/", @options)
   end
 end

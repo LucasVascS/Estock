@@ -3,7 +3,6 @@ class ProvidersController < ApplicationController
 
   def index
     @provider = Provider.all
-    @cep = @cep_service.general
   end
 
   def show
