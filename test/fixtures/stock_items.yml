@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  stock: one
+  product: one
+  updated_by_id: 1
+  exit_at: 2021-07-03 00:27:46
+  status: 1
+
+two:
+  stock: two
+  product: two
+  updated_by_id: 1
+  exit_at: 2021-07-03 00:27:46
+  status: 1
